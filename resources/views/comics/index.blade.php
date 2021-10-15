@@ -3,16 +3,27 @@
 @section('title', 'Fumetti')
 
 @section('content')
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end">
+            <form method="GET">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Cerca Fumetto..." name="search"
+                        value="{{ $search }}">
+                    <button class="btn btn-secondary" type="submit">Cerca</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <table class="table table-dark">
         <thead>
             <tr>
-                <th scope="col">Image</th>
+                <th scope="col"></th>
                 <th scope="col">Nome</th>
                 <th scope="col">Serie</th>
                 <th scope="col">Prezzo</th>
                 <th scope="col">Data</th>
                 <th scope="col">Tipo</th>
-                <th scope="col">Azioni</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
