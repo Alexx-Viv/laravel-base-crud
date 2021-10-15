@@ -4,14 +4,15 @@
 
 @section('content')
     <div class="row">
-        <div class="col-12 d-flex justify-content-end">
-            <form method="GET">
+        <div class="col-12 d-flex justify-content-end align-items-start">
+            <form class="me-2" method="GET">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Cerca Fumetto..." name="search"
                         value="{{ $search }}">
                     <button class="btn btn-secondary" type="submit">Cerca</button>
                 </div>
             </form>
+            <a class="btn btn-success" href="{{ route('comics.create') }}">Crea Fumetto</a>
         </div>
     </div>
     <table class="table table-dark">

@@ -10,12 +10,13 @@
             <div class="col-3 text-center">
                 <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
             </div>
-            <div class="col-9">
+            <div class="col-9 d-flex flex-column">
                 <h3 class="text-muted">{{ $comic->series }}</h3>
                 <p>{!! $comic->description !!}</p>
                 <div><strong>Prezzo:</strong> {{ $comic->price }}</div>
                 <div><strong>Data:</strong> {{ $comic->sale_date }}</div>
                 <div><strong>Tipo:</strong> {{ $comic->type }}</div>
+                <a class="btn btn-primary align-self-end" href="{{ route('comics.index') }}">Indietro</a>
             </div>
         </div>
     </div>

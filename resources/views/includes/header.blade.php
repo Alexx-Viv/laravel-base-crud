@@ -12,6 +12,10 @@
                 <a class="nav-link {{ request()->routeIs('comics.index') ? 'active' : '' }}"
                     href="{{ route('comics.index') }}">Comics</a>
             </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link {{ request()->routeIs('comics.create') ? 'active' : '' }}"
+                    href="{{ route('comics.create') }}">Crea Fumetto</a>
+            </li>
         </ul>
     </div>
 </nav>
