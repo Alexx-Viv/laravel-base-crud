@@ -40,6 +40,7 @@
                     <td class="pt-4">{{ $comic->type }}</td>
                     <td class="pt-4">
                         <a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}">Dettagli</a>
+                        <a class="btn btn-warning mt-2" href="{{ route('comics.edit', $comic->id) }}">Modifica</a>
                     </td>
                 </tr>
             @empty
