@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 use App\Models\Comic;
 
 class ComicController extends Controller
@@ -44,7 +44,7 @@ class ComicController extends Controller
 
         $comic = new Comic();
         $comic->fill($data);
-
+        $comic->slug = Str::slug($comic->title, '-');
         $comic->save();
 
         return redirect()->route('comics.show', $comic);
@@ -88,7 +88,7 @@ class ComicController extends Controller
 
         $comic = Comic::findOrFail($id);
         $comic->fill($data);
-
+        $comic->slug = Str::slug($comic->title, '-');
         $comic->save();
 
         return redirect()->route('comics.show', $comic);
@@ -100,8 +100,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index')->with('alert', 'Comic cancellato con successo')->with('alert-type', 'success');
     }
 }
